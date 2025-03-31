@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
@@ -87,6 +92,7 @@ section {
 /* Home Section Styles */
 .home-section {
     background: url('img/hero-bg.jpg') no-repeat center center/cover;
+    /* no-repeat center center/cover; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -413,5 +419,355 @@ footer {
     .home-content p {
         font-size: 1rem;
         letter-spacing: 8px;
+    }
+}
+
+/* Overall styling */
+.contact-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    color: #000000;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: rgba(58, 41, 41, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contact-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.contact-container p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1em;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #333;
+    color: #fff;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #fff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submit-btn {
+    padding: 15px 40px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+.submit-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container h2 {
+        font-size: 2.2em;
+    }
+
+    .contact-container p {
+        font-size: 1em;
+    }
+
+    .contact-form {
+        padding: 0 20px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    .submit-btn {
+        width: 100%;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-container h2 {
+        font-size: 1.8em;
+    }
+
+    .contact-container p {
+        font-size: 0.9em;
+    }
+
+    .form-group input, .form-group textarea {
+        padding: 12px;
+        font-size: 1em;
+    }
+
+    .submit-btn {
+        font-size: 1em;
+    }
+}
+
+
+/* Overall styling */
+.deal-section {
+    background-image: url('img/deal-bg.jpg'); /* Image for the background */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 100px 20px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.deal-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1;
+}
+
+.deal-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+    border-radius: 10px;
+    z-index: 2;
+    position: relative;
+}
+
+.deal-info h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.deal-info p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.timer {
+    font-size: 2.5em;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.timer span {
+    padding: 10px 20px;
+    background-color: #333;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.expired-message {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #f44336;
+    display: block;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .deal-info h2 {
+        font-size: 2em;
+    }
+
+    .deal-info p {
+        font-size: 1.1em;
+    }
+
+    .timer {
+        font-size: 2em;
+    }
+
+    .expired-message {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .deal-info h2 {
+        font-size: 1.8em;
+    }
+
+    .deal-info p {
+        font-size: 1em;
+    }
+
+    .timer {
+        font-size: 1.5em;
+    }
+
+    .expired-message {
+        font-size: 0.9em;
+    }
+}
+
+
+/* Overall styling */
+.why-clothora-section {
+    background-color: #f8f8f8;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.why-clothora-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.why-clothora-container h2 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 40px;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+}
+
+/* Feature item styling */
+.why-clothora-features {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.feature-item {
+    flex: 1;
+    min-width: 250px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(57, 23, 23);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    
+}
+
+.feature-item h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 0.7em;
+    color: #fff;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+}
+
+
+#genz-feature {
+    background-image: url('img/genz.jpg'); 
+    
+}
+
+#cod-feature {
+    background-image: url('img/cod.jpg'); 
+}
+
+#return-feature {
+    background-image: url('img/return.jpg'); 
+}
+
+#delivery-feature {
+    background-image: url('img/delivery.jpg'); 
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .why-clothora-container h2 {
+        font-size: 1.8em;
+    }
+
+    .why-clothora-features {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .feature-item {
+        flex: none;
+        width: 80%;
+        margin: 0 auto;
     }
 }
