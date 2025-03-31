@@ -1,0 +1,417 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    background-color: transparent;
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #000;
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links ul li {
+    margin: 0 1.5rem;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-links ul li a:hover,
+.nav-links ul li a.active {
+    color: #555;
+}
+
+.nav-links ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-links ul li a:hover::after,
+.nav-links ul li a.active::after {
+    width: 100%;
+}
+
+.menu-btn {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+section {
+    min-height: 100vh;
+    padding: 80px 5% 40px;
+}
+
+/* Home Section Styles */
+.home-section {
+    background: url('img/hero-bg.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 0;
+}
+
+.home-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.home-content {
+    position: relative;
+    z-index: 1;
+}
+
+.home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    letter-spacing: 10px;
+    margin-bottom: 0;
+    color: #000;
+}
+
+.home-content h1 span {
+    font-size: 5rem;
+}
+
+.home-content p {
+    font-size: 2rem;
+    letter-spacing: 15px;
+    margin-top: -15px;
+    color: #000;
+    font-weight: 500;
+}
+
+.home-btn {
+    margin-top: 2rem;
+}
+
+.home-btn a {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    border: 2px solid #000;
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.home-btn a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* About Section Styles */
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+.about-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-image {
+    flex: 1;
+    padding: 2rem;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.about-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #000;
+}
+
+.about-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: #555;
+    font-size: 1rem;
+}
+
+.about-btn {
+    margin-top: 1rem;
+}
+
+.about-btn a {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    border: 2px solid #000;
+    text-decoration: none;
+    color: #000;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.about-btn a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Lookbook Section Styles */
+.lookbook-section {
+    background-color: #fff;
+    text-align: center;
+}
+
+.lookbook-header {
+    margin-bottom: 3rem;
+}
+
+.lookbook-header h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1rem;
+}
+
+.lookbook-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background-color: #000;
+}
+
+.lookbook-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.lookbook-item {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+}
+
+.lookbook-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.lookbook-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.lookbook-item:hover img {
+    transform: scale(1.1);
+}
+
+.lookbook-item:hover .lookbook-overlay {
+    opacity: 1;
+}
+
+.lookbook-info {
+    text-align: center;
+    color: #fff;
+    padding: 1rem;
+}
+
+.lookbook-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.lookbook-info p {
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #f8f8f8;
+}
+
+@media screen and (max-width: 992px) {
+    .about-container {
+        flex-direction: column;
+    }
+    
+    .about-image, .about-content {
+        width: 100%;
+    }
+    
+    .lookbook-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.95);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.5s ease;
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-links ul li {
+        margin: 1.5rem 0;
+    }
+    
+    .home-content h1 {
+        font-size: 4rem;
+    }
+    
+    .home-content h1 span {
+        font-size: 3.5rem;
+    }
+    
+    .home-content p {
+        font-size: 1.5rem;
+        letter-spacing: 10px;
+    }
+    
+    .about-container {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .lookbook-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .lookbook-item {
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .home-content h1 {
+        font-size: 3rem;
+    }
+    
+    .home-content h1 span {
+        font-size: 2.5rem;
+    }
+    
+    .home-content p {
+        font-size: 1rem;
+        letter-spacing: 8px;
+    }
+}
